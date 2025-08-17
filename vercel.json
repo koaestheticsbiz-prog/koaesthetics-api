@@ -1,0 +1,12 @@
+api/procedures.js
+// api/procedures.js
+export default async function handler(req, res) {
+  const q = req.query.q || "보톡스";
+  res.status(200).json({
+    ok: true,
+    procedure: q,
+    priceBandKRW: [120000, 350000], // 임시 추정 밴드
+    popularityIndex: 80,            // 임시 값 (나중에 Naver DataLab 연결)
+    ts: Date.now()
+  });
+}
